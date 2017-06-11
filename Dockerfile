@@ -15,7 +15,7 @@ RUN apk add php7 \
     php7-openssl \
     #REQUIRED BY COMPOSER
     php7-zlib \
-    #REQUIRED BY iconv
+    #REQUIRED BY COMPOSER iconv operations
     php7-mbstring \
     php7-fpm
 
