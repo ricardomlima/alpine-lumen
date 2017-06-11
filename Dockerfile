@@ -17,6 +17,8 @@ RUN apk add php7 \
     php7-zlib \
     #REQUIRED BY COMPOSER iconv operations
     php7-mbstring \
+    #REQUIRED BY LUMEN
+    php7-zip
     php7-fpm
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
