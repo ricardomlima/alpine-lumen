@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER Ricardo Monteiro e Lima <ricardolima89@gmail.com>
 
-RUN apk add --update --upgrade  bash git curl
+RUN apk add --update --upgrade bash git curl
 
 RUN apk add php7 \
     #REQUIRED BY COMPOSER
