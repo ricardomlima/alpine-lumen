@@ -28,4 +28,7 @@ RUN composer global require "laravel/lumen-installer"
 
 RUN ln -s /root/.composer/vendor/bin/lumen /bin/lumen
 
+#MAKE PHP-FPM LISTEN TO REQUESTS COMING FROM DOCKER NETWORK
+RUN sed -i -e 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/g' /etc/php7/php-fpm.d/www.conf
+
 EXPOSE 9000
