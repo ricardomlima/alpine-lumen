@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER Ricardo Monteiro e Lima <ricardolima89@gmail.com>
 
-RUN apk add --update --upgrade bash git curl
+RUN apk add --update --upgrade bash git curl openssl
 
 RUN apk add php7 \
     #REQUIRED BY COMPOSER
@@ -25,7 +25,16 @@ RUN apk add php7 \
     php7-memcached \
     #REQUIRED BY LUMEN & ARTISAN (migrate)
     php7-pdo_mysql \
+    #REQUIRED BY PHPUNIT
+    php7-iconv \
+    #REQUIRED BY PHPUNIT
+    php7-dom \
     php7-fpm
+
+#INSTALLING PHPUNIT
+RUN wget https://phar.phpunit.de/phpunit.phar && \
+    chmod +x phpunit.phar && \
+    mv phpunit.phar /usr/local/bin/phpunit
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     composer self-update
