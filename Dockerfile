@@ -23,6 +23,8 @@ RUN apk add php7 \
     php7-pdo \
     #REQUIRED BY LUMEN & ARTISAN (migrate)
     php7-memcached \
+    #REQUIRED BY LUMEN & ARTISAN (migrate)
+    php7-pdo_mysql \
     php7-fpm
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
