@@ -29,6 +29,8 @@ RUN apk add php7 \
     php7-iconv \
     #REQUIRED BY PHPUNIT
     php7-dom \
+    #REQUIRED BY ARTISAN (db:seed)
+    php7-ctype \
     php7-fpm
 
 #INSTALLING PHPUNIT
