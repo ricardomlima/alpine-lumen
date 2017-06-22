@@ -31,6 +31,10 @@ RUN apk add php7 \
     php7-dom \
     #REQUIRED BY ARTISAN (db:seed)
     php7-ctype \
+    #REQUIRED BY ARTISAN (migration with alter table)
+    php7-tokenizer \
+    php7-xmlwriter \
+    php7-xml \
     php7-fpm
 
 #INSTALLING PHPUNIT
